@@ -38,6 +38,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./articles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Robot IMTA</title>
@@ -62,51 +63,28 @@
     
 </header>
 <body>
-    <div class="navigation" id="nav-container">
-        <div id="vertical-nav-bar"></div>
-        <ul class="nav-bar-list">
-            <li><a href="#home-header" class="active">Intro</a></li>
-            <li id="nav-articles"><a href="#articles-section">Articles</a></li>
-            <li><a href="#"></a></li>
-            
-        </ul>
+    <div class="title-section">
+        <h1>Articles</h1>
     </div>
-    <div class="home" id="app">
-        <section class="intro" id="intro-section">
-            <div class="title-robot">
-                <h1 class="name-robot">
-                    I-RoBoT
-                </h1>
-                <h4 class="details-robot">
-                    Un robot construit par le club robotique de l'IMT atlantique qui participera à l'édition 2021 de la coupe de France de robotique.
-                </h4>
-                <div class="a-propos-button">
-                    <a href="./a_propos.html"><button class="button-normal">A propos de nous</button></a>
-                </div>
-                
-            </div>
-        
-        </section>
 
-        <section id="articles-section">
-            <div class="title-section">
-                <h1>Articles</h1>
-            </div>
-            <div>
-                <ul class="articles-list">
-                    <li class="wrapper" v-for="article in articles.slice(0,3)">
-                        <div class="article-container">
-                            <div class="article-image"><img v-bind:src='article["images"].slice(0,1)' alt="image"></div>
-                            <div class="details-article">
-                                <h2 class="title">{{article["title"]}}</h2>
-                                <h4 class="date">{{article["date"]}}</h4>
-                                <h5 class="text">{{article["text"]}}</h5>
-                            </div>
+    <div id="articles-page">    
+        <ul class="articles-list">
+            <li class="wrapper" v-for="article in articles">
+                <div class="article-container">
+                    <div class="article-image"><img v-bind:src='article["images"].slice(0,1)' alt="image"></div>
+                    <a v-on:click="openArticle('articles/',article.id)">
+                        <div class="details-article">
+                            <h2 class="title">{{article["title"]}}</h2>
+                            <h3 class="author">{{article["author"]}}</h3>
+                            <h4 class="date">{{article["date"]}}</h4>
+                            <h5 class="text">{{article["text"]}}</h5>
                         </div>
-                    </li>
-                </ul>
-            </div>
-            <a href="./articles.html"><button class="button-normal">Voir plus d'articles</button></a>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <section class="nav-page-1">
+            <a href="#home-header"><button class="button-normal">Back to top</button></a>
         </section>
     </div>
     <script src="./main.js"></script>

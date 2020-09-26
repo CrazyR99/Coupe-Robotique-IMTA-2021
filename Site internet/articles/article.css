@@ -1,0 +1,105 @@
+.article {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 5vh;
+	align-items: center;
+}
+
+.article-intro {
+	width: 100%;
+	background-color: transparent;
+	height: 45vh;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	background-size: cover;
+	background-position-y: center;
+	background-position-x: center;
+}
+
+.article-intro .article-title {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: white;
+	text-align: center;
+	margin: 2vw;
+}
+
+.article-intro .article-author {
+	color: tomato;
+}
+
+.article-intro .article-date {
+	color: white;
+	margin-bottom: 8vh;
+}
+
+.nav-articles {
+	margin: 3vw;
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.button-nav {
+	border: none;
+	color: tomato;
+	background-color: transparent;
+}
+
+.button-normal {
+	background-color: #4f6973;
+	border: none;
+}
+
+.button-nav:hover {
+	color: #646d72;
+}
+
+.button-nav-disabled {
+	visibility: hidden;
+}
+
+.article-text {
+	background-color: #fafafa;
+	margin: 7vw;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	text-align: justify;
+}
+
+.article-text h5 {
+	font-weight: normal;
+}
+
+.article-images-list {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+}
+
+.article-images-list .article-image {
+	flex: 1;
+	position: relative;
+	margin: 2vw;
+}
+
+.article-sources {
+	display: flex;
+	flex-direction: column;
+	list-style: none;
+	align-items: center;
+	margin-top: 1vw;
+}
+
+.article-sources li {
+	padding-left: 5vw;
+	padding-right: 5vw;
+}
+
+.article-sources h5 {
+	font-weight: normal;
+}

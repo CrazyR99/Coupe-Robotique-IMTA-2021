@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div class="animated-background">
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./article.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Robot IMTA</title>
+</head>
+<header id="home-header">
+    <img class="logo-coupe" src="../images/logo_coupe_2020.png" alt="logo_coupe_2020">
+    <h5 class="title-header">Coupe de France de robotique</h5>
+
+    <ul class="menu-header">
+        <li class="page-link-item"><a href="../index.html">Accueil</a></li>
+        <li class="page-link-item"><a href="../articles.html">Articles</a></li>
+        <li class="page-link-item"><a href="../sponsors.html">Sponsors</a></li>
+        <li class="page-link-item"><a href="../a_propos.html">A propos</a></li>
+    </ul>
+
+    <ul class="network-list">
+        <!-- ATTENTION !! ordre inversé -->
+        <li class="network-item"><a href="https://www.linkedin.com/school/imt-atlantique/"><img src="../images/linkedIn_logo.png" alt="linkedIn_logo"></a></li>
+        <li class="network-item"><a href="https://www.youtube.com/c/IMTAtlantique/videos"><img src="../images/youtube_logo.png" alt="youtube_logo"></a></li>
+        <li class="network-item"><a href="https://www.facebook.com/IMTAtlantique"><img src="../images/facebook_logo.png" alt="facebook_logo"></a></li>
+    </ul>
+    
+</header>
+<body>
+
+    <div id="article-1" class="article">
+        <div class="article-intro" style="background-image: url('../images/article_background_dark.png');">
+           <div class="article-title">
+                <h1>{{ article['title'] }} </h1>
+            </div>
+            <div class="article-author">
+                <h2>{{ article['author'] }} </h2>
+            </div>
+            <div class="article-date">
+                <h3>{{ article['date'] }} </h3>
+            </div>
+        </div>
+
+        <div class="nav-articles">
+            <button :class="[article['id']==1 ? 'button-nav-disabled' : 'button-nav']" v-on:click="openArticle('',(article['id']-1))">< Article précédent</button>
+            <a href="../articles.html"><button class="button-normal">Retour aux articles</button></a>
+            <button :class="[article['id']==5 ? 'button-nav-disabled' : 'button-nav']" v-on:click="openArticle('',(article['id']+1))">Article suivant ></button>
+        </div>
+
+        <div class="article-text">
+            <h5>{{ article['text'] }} </h5>
+        </div>
+
+        <div class="article-images-list">
+            <ul v-for="image in article['images']" class="article-image">
+                <img v-bind:src="'.'+image" alt="">
+            </ul>
+        </div>
+        
+
+        <h4 v-if="article['sources'].length !=0">Sources:</h4>
+        <ul class="article-sources">
+            <li v-for="source in article['sources']"><h5>{{ source }} </h5></li>
+        </ul>
+
+        <section class="nav-page-1">
+            <a href="#home-header"><button class="button-normal">Back to top</button></a>
+        </section>
+    </div>
+    <script src="../main.js"></script>
+    <script src="../vuejs.js"></script>
+</body>
+</html>

@@ -62,51 +62,49 @@
     
 </header>
 <body>
-    <div class="navigation" id="nav-container">
-        <div id="vertical-nav-bar"></div>
-        <ul class="nav-bar-list">
-            <li><a href="#home-header" class="active">Intro</a></li>
-            <li id="nav-articles"><a href="#articles-section">Articles</a></li>
-            <li><a href="#"></a></li>
-            
-        </ul>
-    </div>
-    <div class="home" id="app">
-        <section class="intro" id="intro-section">
-            <div class="title-robot">
-                <h1 class="name-robot">
-                    I-RoBoT
-                </h1>
-                <h4 class="details-robot">
-                    Un robot construit par le club robotique de l'IMT atlantique qui participera à l'édition 2021 de la coupe de France de robotique.
-                </h4>
-                <div class="a-propos-button">
-                    <a href="./a_propos.html"><button class="button-normal">A propos de nous</button></a>
-                </div>
-                
-            </div>
+    <div class="a-propos-page" id="a-propos-page">
         
-        </section>
-
-        <section id="articles-section">
-            <div class="title-section">
-                <h1>Articles</h1>
+        <section id="a-propos-section">
+            <div class="title-section" id="a-propos-start">
+                <h1>A propos</h1>
             </div>
-            <div>
-                <ul class="articles-list">
-                    <li class="wrapper" v-for="article in articles.slice(0,3)">
-                        <div class="article-container">
-                            <div class="article-image"><img v-bind:src='article["images"].slice(0,1)' alt="image"></div>
-                            <div class="details-article">
-                                <h2 class="title">{{article["title"]}}</h2>
-                                <h4 class="date">{{article["date"]}}</h4>
-                                <h5 class="text">{{article["text"]}}</h5>
+            <div class="nantes">
+                <h1 class="equipe-name">L'équipe nantaise</h1>
+                <ul class="member-list">
+                    <li class="wrapper" v-for="member in team_members_nantes_details">
+                        <div class="team-member">
+                            <div class="avatar-container"><img class="avatar" v-bind:src='member["avatar"]' alt="photo"></div>
+                            <div class="details-member">
+                                <h3 class="name">{{member["name"]}}</h3>
+                                <h4 class="taf">{{member["taf"]}}</h4>
+                                <h5 class="motiv">{{member["motiv"]}}</h5>
+                                <h5 class="role">{{member["role"]}}</h5>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
-            <a href="./articles.html"><button class="button-normal">Voir plus d'articles</button></a>
+            <div class="brest">
+                <h1 class="equipe-name">L'équipe brestoise</h1>
+                <ul class="member-list">
+                    <li class="wrapper" v-for="member in team_members_brest_details">
+                        <div class="team-member">
+                            <div class="avatar-container"><img class="avatar" v-bind:src='member["avatar"]' alt="photo"></div>
+                            <div class="details-member">
+                                <h3 class="name">{{member["name"]}}</h3>
+                                <h4 class="taf">{{member["taf"]}}</h4>
+                                <h5 class="motiv">{{member["motiv"]}}</h5>
+                                <h5 class="role">{{member["role"]}}</h5>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+        </section>
+
+        <section class="nav-page-1">
+            <a href="#home-header"><button class="button-normal">Back to top</button></a>
         </section>
     </div>
     <script src="./main.js"></script>
