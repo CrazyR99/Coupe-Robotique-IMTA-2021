@@ -1,0 +1,96 @@
+.App {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #02b8df;
+	font-family: 'Barlow', sans-serif;
+}
+
+.html {
+	scroll-behavior: smooth;
+}
+
+.iconButton {
+	width: 10vw;
+	align-self: center;
+}
+
+.iconButton button {
+	background-color: transparent;
+	border: none;
+}
+
+.iconButton button:focus {
+	outline: none;
+	animation: growAndReset 150ms linear;
+}
+
+.iconButton img {
+	filter: grayscale(100%);
+	width: 6vw;
+}
+
+.iconButton span {
+	visibility: hidden;
+	color: white;
+}
+
+.iconButton:hover img {
+	filter: none;
+}
+
+.iconButton:hover span {
+	visibility: visible;
+}
+
+.one {
+	grid-area: one;
+	width: 100%;
+}
+.two {
+	grid-area: two;
+	width: 100%;
+}
+.three {
+	grid-area: three;
+	width: 100%;
+}
+.four {
+	grid-area: four;
+	width: 100%;
+}
+.five {
+	grid-area: five;
+	width: 100%;
+}
+
+.six {
+	grid-area: six;
+	width: 100%;
+}
+
+.grid {
+	display: grid;
+	width: 100%;
+	grid-template-areas: 'one one one two two two two four four' 'one one one three three six six four four'
+		'one one one three three five five five five';
+	padding: 2vw 10vw;
+}
+
+.grid div {
+	background-color: transparent;
+	text-align: center;
+	font-size: 30px;
+}
+
+@keyframes growAndReset {
+	0% {
+		transform: scale(1) translateY(0) rotate(0);
+	}
+	50% {
+		transform: scale(0.8) translateY(0) rotate(0);
+	}
+	100% {
+		transform: scale(1) translateY(0) rotate(0);
+	}
+}
