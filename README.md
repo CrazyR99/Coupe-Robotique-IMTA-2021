@@ -9,6 +9,7 @@ Ce repo est tenu par l'équipe de l'Atlantic Robotic Club d'IMT Atlantique afin 
 Ce repo contient différents dossiers qui sont répartis selon la thématique couverte pour le projet.
 
 ### Le site web
+Dans le dossier "site" se trouvent les codes du site web de l'équipe dont le lien est le suivant : https://poulpybot-arc.herokuapp.com/poulpybot2/ 
 
 ### La détection
 
