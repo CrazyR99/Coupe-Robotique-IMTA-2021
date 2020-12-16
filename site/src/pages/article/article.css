@@ -1,0 +1,105 @@
+/* the page that displays a single article */
+.articleContainer {
+	width: 100%;
+	max-width: 70rem;
+	margin: 5rem auto;
+}
+
+/* the container that displays the main data of the article */
+.articleTitleSection {
+	height: 10vw;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 3vw;
+	text-align: center;
+}
+
+/* the title, inside the articleContainer */
+.articleTitle {
+	font-size: 4vw;
+	letter-spacing: -0.3vw;
+	margin-bottom: 1vw;
+	font-weight: bold;
+	margin: 0;
+	transition: all ease 1s;
+	transform: translateY(-200px);
+	opacity: 0;
+}
+
+/* the subtitle, inside the articleContainer */
+.articleSubtitle {
+	font-size: 2.5vh;
+	transition: all ease 1s;
+	transform: translateY(-200px);
+	opacity: 0;
+}
+
+/* the arrow used to go back to the article page */
+.articleBackArrow{
+	position: absolute;
+	vertical-align: center;
+	left:3vw;
+}
+
+/* the icon used as the back arrow */
+.articleBackArrow img{
+	width: 3em;
+	transform: rotate(90deg);
+}
+
+/* the body of the article */
+.articleBody {
+	width: 100%;
+	text-align: justify;
+	transition: all ease 1s;
+	transform: translateY(-200px);
+	opacity: 0;
+}
+
+/* the arrow used to go back to the article page */
+.articleUpArrow{
+	position: fixed;
+	cursor: pointer;
+	left:50%;
+	bottom: 1rem;
+	transform: translateX(-50%);
+	animation: animationArrowUp infinite 5s;
+}
+
+/* the icon used as the back arrow */
+.articleUpArrow img{
+	width: 3em;
+	transform: rotate(180deg);
+}
+
+/* this class is used to animate the container when it appears on the screen */
+.fadeAndMoveFromBelow {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+@media screen and (max-width: 600px) {
+	/* the container that displays the main data of the article */
+	.articleTitleSection {
+		height: 5rem;
+	}
+	/* the title, inside the articleContainer */
+	.articleTitle {
+		font-size: 2rem;
+	}
+}
+
+@keyframes animationArrowUp {
+	0% {
+		transform: translateX(-50%) translateY(0) scale(1);
+	}
+	25% {
+		transform: translateX(-50%) translateY(-10px) scale(0.95);
+	}
+	50% {
+		transform: translateX(-50%) translateY(0) scale(1);
+	}
+}

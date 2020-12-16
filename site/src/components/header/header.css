@@ -1,0 +1,33 @@
+/* container of the whole header */
+#headerContainer {
+	position: absolute;
+	width: calc(80% - 60px);
+	display: flex;
+	flex-direction: row;
+	z-index: 101;
+	margin: 1rem 30px;
+}
+
+/* leading text */
+#headerLeadingText {
+	flex: 1;
+}
+
+/* ul of all the nav links */
+#navList {
+	list-style: none;
+	display: flex;
+}
+
+/* nav link */
+.navLink {
+	margin: 0 0 0 5vw;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+	/* container of the whole header */
+	#headerContainer {
+		width: calc(100% - 60px);
+	}
+}

@@ -1,0 +1,190 @@
+/* this file defines the style base of all articles */
+
+.article {
+	position: relative;
+	width: 100%;
+	padding: 5vw 8vw 8vw 8vw;
+	margin: 0;
+}
+
+.article img {
+	width: 80%;
+	margin: 1rem 10%;
+}
+
+.article video {
+	width: 80%;
+	margin: 1rem 10%;
+}
+
+.article iframe {
+	width: 80%;
+	height: 30vw;
+	margin: 1rem 10%;
+}
+
+.article a {
+	color: #02b8df;
+	text-decoration: none;
+}
+
+.article ul {
+	list-style-type: disk;
+	list-style-position: inside;
+	width: 95%;
+	margin: 0 0 0 5%;
+}
+
+.article ul > li > ul{
+	margin: 0 0 0 2rem
+}
+
+.article h2 {
+	margin: 2rem 0 1rem 0;
+}
+
+.article h5 {
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+.article p {
+	text-indent: 3rem;
+}
+
+.article table {
+	border-collapse: collapse;
+	width: 100%;
+}
+  
+.article td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+.article th {
+	text-align: center;
+	background-color: #aaa;
+}
+  
+.article td:nth-child(odd) {
+	background-color: #dddddd;
+}
+
+.article .tableProsAndCons th:nth-child(1){
+	background-color: #ddd;
+}
+
+.article .tableProsAndCons th:nth-child(2){
+	background-color: rgba(0, 255, 0, .7);
+}
+
+.article .tableProsAndCons th:nth-child(3){
+	background-color: rgba(255, 0, 0, .7);
+}
+
+.article .tableProsAndCons td:nth-child(1){
+	background-color: white;
+}
+
+.article .tableProsAndCons td:nth-child(2){
+	background-color: rgba(0, 255, 0, .2);
+}
+
+.article .tableProsAndCons td:nth-child(3){
+	background-color: rgba(255, 0, 0, .2);
+}
+
+.article .contents {
+	position: relative;
+	width: 100%;
+	display: grid;
+	place-items: center;
+	padding: 2rem;
+}
+
+.article .contents h1 {
+	color: #ffeda4;
+}
+
+.article .contents img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+	filter: brightness(40%);
+}
+
+.article .contents div {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 0.5rem;
+	background: rgba(0, 0, 0, .7);
+	padding: 1rem 3rem;
+	text-align: center;
+}
+
+.article .contents div > * {
+	cursor: pointer;
+	color: #fff;
+	padding: 0.3rem 0;
+	margin: 0;
+}
+
+.article .sideViewImage {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+.article .multipleImages{
+	display: flex;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.article .multipleImages img{
+	margin: 0;
+}
+
+.article .avatar {
+	margin: 5rem 0;
+	justify-content: center;
+}
+
+.article .avatar div>img{
+	vertical-align: middle;
+	width: 10rem;
+	height: 10rem;
+	border-radius: 50%;
+	object-fit: cover;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.article .avatar div{
+	text-align:center;
+	width: 40%
+}
+
+.article .avatar p{
+	text-indent: 0;
+	margin: 0 0 0.3rem 0 ;
+}
+
+@media screen and (max-width: 600px) {
+	.article .avatar {
+		display: block;
+	}
+	.article .avatar div{
+		width: 100%
+	}
+}

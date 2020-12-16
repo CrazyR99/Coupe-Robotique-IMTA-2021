@@ -1,0 +1,13 @@
+/* Container of the whole app */
+#appContainer {
+	display: flex;
+	margin: 0 auto;
+	width: 80%;
+}
+
+@media screen and (max-width: 600px) {
+	#appContainer {
+		margin: 0;
+		width: 100%;
+	}
+}
