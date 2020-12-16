@@ -1,5 +1,6 @@
 # Coupe-Robotique-IMTA-2021
-
+<p align='justify'>
+  
 ## Philosophie
 
 Ce repo est tenu par l'équipe de l'Atlantic Robotic Club d'IMT Atlantique afin de stocker les différents codes qui sont utilisés pour la participation de l'équipe à la coupe de France de Robotique 2021 (thématique Sail The World). L'ambition est de laisser ces codes à disposition des futures équipes qui représenteront l'école afin qu'elles puissent s'appuyer sur des bases existantes. 
@@ -16,4 +17,4 @@ Dans le dossier "site" se trouvent les codes du site web de l'équipe dont le li
 ### Les actionneurs
 
 ### La base roulante 
-
+</p>
