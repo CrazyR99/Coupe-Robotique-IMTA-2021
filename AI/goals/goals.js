@@ -12,15 +12,17 @@ exports.goals= [
             {
                 name: "Move",
                 method: "moveToElement",
-                element: "LightHouse",
-                speed: 1,
+                parameters: {
+                    speed: 1,
+                    element: "LightHouse",
+                },
 
             },
             {
                 name: "Trigger",
                 method: "triggerLightHouse",
-
-            }
+                parameters: {},
+            },
         ]
     },
 ]
