@@ -1,51 +1,40 @@
 
-async function createServer() {
 
-    var express = require('express');
-    const httpServer = require('http').createServer();
-    var expressApp = express();
-    expressApp.use(express.static('./www'));
-    expressApp.listen(8080);
-    const aedes = require('aedes')()
-    const port = 8081
-    const ws = require('websocket-stream')
+const app = {}
 
-    ws.createServer({ server: httpServer }, aedes.handle)
-
-    httpServer.listen(port, function () {
-        console.log('websocket server listening on port ', port)
-    })
-
-    aedes.on('client', function (client) {
-        console.log('Client Connected: \x1b[33m' + (client ? client.id : client) + '\x1b[0m', 'to broker', aedes.id)
-    })
-
-
-}
-
-async function main(){
-
-    await createServer();
+app.startAI = function (){
     //Load map
-    map = require('./maps/map_2022').map
-    //console.log(map)
+    map = require('./maps/map_2022').map;
+    app.logger.log("Map Loaded")
 
     //Load goals
-    goals = require('./goals/goals').goals
-    //console.log(goals)
+    goals = require('./goals/goals').goals;
+    app.logger.log("Goals Loaded")
 
     //Load Robot
-    const Robot = require('./robots/robot_2022')
-    let robot = new Robot()
+    const Robot = require('./robots/robot_2022');
+    app.logger.log("Robot Loaded")
+    let robot = new Robot(app);
 
     //Running goals
     for(const goal of goals){
-        console.log("Running: ",goal.name);
+        app.logger.log("Running: "+goal.name)
         for(const action of goal.actions){
             let success = robot.run(action);
-            console.log(success?"Done":"Failed");
+            app.logger.log(success?"Done":"Failed");
         }
     }
+}
+
+async function main(){
+    let Server = require('./server');
+    app.server = new Server(app)
+    app.server.init();
+    let Logger = require('./logger');
+    //Might be a little confusing to pass app in logger while logger is an argument of app
+    //Try to make a new class called app ?
+
+    app.logger = new Logger(app);
 }
 
 main();
