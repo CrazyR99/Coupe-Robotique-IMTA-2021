@@ -27,14 +27,22 @@ app.startAI = function (){
 }
 
 async function main(){
-    let Server = require('./server');
-    app.server = new Server(app)
-    app.server.init();
-    let Logger = require('./logger');
+
     //Might be a little confusing to pass app in logger while logger is an argument of app
     //Try to make a new class called app ?
 
+    //Create Server
+    let Server = require('./server');
+    app.server = new Server(app)
+    app.server.init();
+
+    //Create Logger
+    let Logger = require('./logger');
     app.logger = new Logger(app);
+
+    //Create AI
+    let Intelligence = require('./intelligence');
+    app.intelligence = new Intelligence(app);
 }
 
 main();
