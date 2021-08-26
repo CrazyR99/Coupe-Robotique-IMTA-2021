@@ -6,12 +6,14 @@ module.exports = class Intelligence {
     }
 
     start() {
-            //Load map
-        let map = require('./maps/map_2022').map;
+        //Load map
+        const Map = require('./maps/map_2022');
+        this.map = new Map(this.app);
+        this.map.init();
         this.app.logger.log("Map Loaded");
 
         //Load goals
-        let goals = require('./goals/goals').goals;
+        this.goals = require('./goals/goals').goals;
         this.app.logger.log("Goals Loaded");
 
         //Load Robot
@@ -20,7 +22,7 @@ module.exports = class Intelligence {
         let robot = new Robot(this.app);
 
         //Running goals
-        for(const goal of goals){
+        for(const goal of this.goals){
             this.app.logger.log("Running: "+goal.name)
             for(const action of goal.actions){
                 let success = robot.run(action);

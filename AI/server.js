@@ -37,21 +37,19 @@ module.exports = class Server {
     onPublish(packet,client){
         //Parse input message
         let msg = {};
-        if(packet.topic == "/control"){
-            try{
-                msg = JSON.parse(packet.payload);
-            } catch(e){
-                console.log("Failed to parse control message");
-                msg = null;
-            }
-            if(msg === null) return;
-            
-            if("action" in msg && msg.action == "run"){
-                if("intelligence" in this.app) this.app.intelligence.start();
-            }
+        if(!client) return;
+        try{
+            msg = JSON.parse(packet.payload);
+        } catch(e){
+            console.log("Failed to parse control message");
+            msg = null;
+        }
+        if(msg === null) return;
+
+        if("action" in msg && msg.action == "run"){
+            if("intelligence" in this.app) this.app.intelligence.start();
+        }
         //Select action
         
-            
-        } 
     }
 }

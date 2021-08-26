@@ -8,9 +8,10 @@
 		  // Once a connection has been made, make a subscription and send a message.
 		  console.log("onConnect");
 		  client.subscribe("/logs");
-		  message = new Paho.MQTT.Message("WebClient Connected");
+          client.subscribe("/map");
+		  /*message = new Paho.MQTT.Message("WebClient Connected");
 		  message.destinationName = "/logs";
-		  client.send(message);
+		  client.send(message);*/
 	}
 
 
