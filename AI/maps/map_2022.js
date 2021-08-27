@@ -28,12 +28,35 @@ module.exports = class Map2022 extends Map {
                 shape: {
                     type: "rectangle",
                     x: 0,
-                    y: 2978,
+                    y: 1978,
                     width: 3000,
                     height: 22,
                     color: "grey"
                 }
-            }
+            },
+            {
+                name: "left border",
+                shape: {
+                    type: "rectangle",
+                    x: -22,
+                    y: 0,
+                    width: 22,
+                    height: 1978,
+                    color: "grey"
+                }
+            },
+            {
+                name: "right border",
+                shape: {
+                    type: "rectangle",
+                    x: 3000,
+                    y: 0,
+                    width: 22,
+                    height: 1978,
+                    color: "grey"
+                }
+            },
+            
         ]
     }
 
