@@ -7,7 +7,7 @@ module.exports = class Intelligence {
 
     start() {
         //Load map
-        const Map = require('./maps/map_2022');
+        const Map = require('./maps/map_2021');
         this.map = new Map(this.app);
         this.map.init();
         this.app.logger.log("Map Loaded");

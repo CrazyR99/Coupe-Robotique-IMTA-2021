@@ -1,12 +1,14 @@
 @media (max-width: 1000px) { 
-    #map2022{
+    #map2021{
         width: 100vw;
         height: calc(100vw/1.5);
     }
+
+
 }
 
 @media (min-width: 1001px) { 
-    #map2022{
+    #map2021{
         width: 33vw;
         height: calc(33vw/1.5);
     }

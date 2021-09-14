@@ -4,7 +4,7 @@ const app = {}
 
 app.startAI = function (){
     //Load map
-    map = require('./maps/map_2022').map;
+    map = require('./maps/map_2021').map;
     app.logger.log("Map Loaded")
 
     //Load goals
