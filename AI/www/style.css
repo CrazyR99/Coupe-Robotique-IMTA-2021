@@ -4,6 +4,11 @@
         height: calc(100vw/1.5);
     }
 
+    #log{
+        width: 100vw;
+        height: calc(100vw/1.5);
+    }
+
 
 }
 
@@ -12,4 +17,19 @@
         width: 33vw;
         height: calc(33vw/1.5);
     }
+
+    #log{
+        width: 50vw;
+        height: calc(33vw/1.5);
+    }
+}
+
+#log{
+    border: thick outset grey;
+    background-color: black;
+    color:lightgray;
+    line-height: 150%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
 }

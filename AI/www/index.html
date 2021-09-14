@@ -19,15 +19,39 @@
 
     </div>-->
 
-    <svg id='map2022' viewBox="-200 -250 3450 2300" unit="mm">
+    <svg id='map2021' viewBox="-200 -250 3450 2300" unit="mm" >
+        <defs>
+            <pattern id="background" patternContentUnits="objectBoundingBox" width="100%" height="100%">
+              <image id="background_image" v-bind:href="background.shape.image" x="0" y="0" width="1" height="1" preserveAspectRatio="none"/>
+            </pattern>
+          </defs>
+        <rect v-bind:x="background.shape.x" v-bind:y="background.shape.y" v-bind:width="background.shape.width" v-bind:height="background.shape.height" fill="url(#background)"/>
         <rect v-for="component in rects" v-bind:x="component.shape.x" v-bind:y="component.shape.y" v-bind:width="component.shape.width" v-bind:height="component.shape.height" v-bind:fill="component.shape.color"/>
     </svg>
+    <div id="log">
+
+    </div>
     
 </body>
 </html>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
 <script>
+
+    (function () {
+    if (!console) {
+        console = {};
+    }
+    var old = console.log;
+    var logger = document.getElementById('log');
+    console.log = function (message) {
+        if (typeof message == 'object') {
+            logger.innerHTML += '> ' + (JSON && JSON.stringify ? JSON.stringify(message) : String(message)) + '<br />'+'<br />';
+        } else {
+            logger.innerHTML += '> ' + message + '<br />';
+        }
+    }
+})();
 
     var map = {}
     // connect the client
@@ -77,11 +101,12 @@
 
 
     var vue_app = new Vue({
-        el: '#map2022',
+        el: '#map2021',
         data: {
             map: map,
             rects: [],
             circles: [],
+            background: {},
         },
         methods:{
             reload_map: function(map){
@@ -89,9 +114,15 @@
                 for(let component of map.components){
                     if(component.shape.type == "rectangle") this.rects.push(component);
                     if(component.shape.type == "circle") this.circles.push(component);
+                    if(component.shape.type == "background") {
+                        this.background = component;
+                        console.log(this.background)
+                    }
                 }
             }
         }
 })
+
+
 </script>
 
