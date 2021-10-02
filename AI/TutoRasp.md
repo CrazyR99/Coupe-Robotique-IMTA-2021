@@ -27,9 +27,9 @@ If you don't have any screen to display the Desktop of the raspberry Pi you migh
 - In localisation parameters choose the country (FR). Then exit
 - `sudo nano /etc/wpa_supplicant/wpa_supplicant.conf`
 - Add this in the file that just opened :
-    > network={
-        ssid="Network Name"
-        psk="and here the password"
+    > network={ </br>
+        ssid="Network Name" </br>
+        psk="and here the password" </br>
     }
 - Ctrl + X / yes then enter
 - Reboot and then it will connect automatically
