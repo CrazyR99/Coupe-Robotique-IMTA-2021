@@ -1,0 +1,29 @@
+{
+    "width": 3000,
+    "height": 2000,
+    "components":[
+        {
+            "name": "top border",
+                "shape": {
+                    "type": "rectangle",
+                    "x": 0,
+                    "y": -22,
+                    "width": 3000,
+                    "height": 22,
+                    "color": "grey"
+                }
+        },
+        {
+            "name": "bot border",
+                "shape": {
+                    "type": "rectangle",
+                    "x": 0,
+                    "y": 1978,
+                    "width": 3000,
+                    "height": 22,
+                    "color": "grey"
+                }
+        }
+        
+    ]
+}
