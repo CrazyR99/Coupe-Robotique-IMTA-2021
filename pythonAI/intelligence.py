@@ -8,12 +8,8 @@ class Intelligence():
         self.app = app
 
     def start(self):
-
-        with open('./maps/map_2022.json') as file:
-            map = json.load(file)
-            print("Map loaded")
         
-        with open('./goals/goals2022.json') as file:
+        with open('./pythonAI/goals/goals2022.json') as file:
             goals = json.load(file)
             print("Goals loaded")
 
@@ -21,8 +17,8 @@ class Intelligence():
         print("Robot loaded")
 
         for goal in goals:
-            print("Running: ",goal.name)
-            for action in goal.actions:
+            print("Running: ", goal['name'])
+            for action in goal['actions']:
                 success = robot.run(action)
                 print("Done") if success else print("Failed")
                 

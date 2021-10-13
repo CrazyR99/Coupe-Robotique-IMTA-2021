@@ -1,5 +1,5 @@
 
-{
+[{
     "name": "Enable Lighthouse",
     "x": 30,
     "y": 30, 
@@ -21,4 +21,4 @@
             "parameters": {}
         }
     ]
-}
+}]
