@@ -14,9 +14,10 @@ class Robot():
         if(cond):
             return method(action['parameters'])
         else:
-            print(action['method']," method not declared")
+            self.app['logger'].info(action['method'] + " method not declared")
             return False
     
     def moveToElement(self, parameters):
-        print("--> Moving to ",parameters['element']," at speed ",parameters['speed'])
+        self.app['logger'].info("--> Moving to " + str(parameters['element']) +\
+                                " at speed " + str(parameters['speed']))
         return True

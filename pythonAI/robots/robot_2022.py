@@ -1,13 +1,13 @@
-from robot import Robot
+from robots.robot import Robot
 
 class Robot2022(Robot):
 
     def __init__(self, app):
-        super(app)
+        super().__init__(app)
     
 
     def triggerLightHouse(self, parameters):
-        print("--> Triggering LightHouse ", parameters)
+        self.app['logger'].info("--> Triggering LightHouse " + str(parameters))
         return True
 
     

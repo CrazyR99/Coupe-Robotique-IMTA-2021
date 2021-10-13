@@ -11,14 +11,14 @@ class Intelligence():
         
         with open('./pythonAI/goals/goals2022.json') as file:
             goals = json.load(file)
-            print("Goals loaded")
+            self.app['logger'].info("Goals loaded")
 
         robot = Robot2022(self.app)
-        print("Robot loaded")
+        self.app['logger'].info("Robot loaded")
 
         for goal in goals:
-            print("Running: ", goal['name'])
+            self.app['logger'].info("Running: "+goal['name'])
             for action in goal['actions']:
                 success = robot.run(action)
-                print("Done") if success else print("Failed")
+                self.app['logger'].info("Done") if success else self.app['logger'].info("Failed")
                 
